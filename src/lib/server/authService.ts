@@ -1,4 +1,4 @@
-import { BASIC_API_URL } from './config';
+import { BASIC_API_URL } from '$env/static/private';
 
 export async function authenticate(token: string): Promise<boolean> {
 	const route = BASIC_API_URL + '/auth/verify';

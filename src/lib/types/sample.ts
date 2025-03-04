@@ -1,11 +1,11 @@
-enum AvailabilityStatus {
+export enum AvailabilityStatus {
 	Public,
 	OnModeration,
 	Rejected,
 	OnAnalysis
 }
 
-type Sample = {
+export type Sample = {
 	id: number;
 	name: string;
 	slug: string;
@@ -28,3 +28,5 @@ type Sample = {
 	isFree: boolean;
 	createdAt: Date;
 };
+
+export type SampleWithAudioSignedUrl = Sample & { audioSignedUrl: string };

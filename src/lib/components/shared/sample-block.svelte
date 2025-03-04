@@ -1,24 +1,23 @@
 <script lang="ts">
-	import { Button } from '../ui/button';
 	import Waveform from './waveform.svelte';
-	import Play from 'lucide-svelte/icons/play';
+	import Download from 'lucide-svelte/icons/download';
+	import { Button } from '../ui/button';
+	import Ear from 'lucide-svelte/icons/ear';
+	import type { SampleWithAudioSignedUrl } from '$lib/types/sample';
 
-	let { sample }: { sample: Sample } = $props();
+	let { sample }: { sample: SampleWithAudioSignedUrl } = $props();
 </script>
 
-<div class="flex items-center justify-between border p-2">
-	<div class="flex h-8 items-center gap-2">
-		<Button variant="ghost" size="icon">
-			<Play />
-		</Button>
-		<Waveform {sample} />
+<article class="hover:bg-secondary/30 flex items-center justify-between rounded-md p-1 transition">
+	<Waveform {sample} />
+	<div class="flex items-center gap-x-12 text-sm font-medium">
+		<p>{sample.name}</p>
+		<p title={sample.downloads + ' прослушиваний'} class="text-muted-foreground flex items-center">
+			<Ear class="size-4" />
+			{sample.downloads}
+		</p>
 	</div>
-	<h6>
-		{sample.name}
-	</h6>
-	<div>
-		{#each sample.genres as genres}
-			<span>{genres}</span>
-		{/each}
-	</div>
-</div>
+	<Button size="icon" variant="ghost">
+		<Download class="size-4" />
+	</Button>
+</article>
