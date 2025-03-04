@@ -1,4 +1,4 @@
-import { BASIC_API_URL } from '$lib/server/config';
+import { BASIC_API_URL } from '$env/static/private';
 import { fail, type Actions } from '@sveltejs/kit';
 
 export const actions = {

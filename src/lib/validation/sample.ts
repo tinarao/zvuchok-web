@@ -21,9 +21,9 @@ const validators = {
 export const submitSampleValidation = z.object({
 	name: validators.name,
 	description: validators.description,
-	genres: validators.genres,
-	file: validators.file,
-	tags: validators.tags
+	genres: validators.genre,
+	tags: validators.genre,
+	file: validators.file
 });
 
 export type SubmitSampleDTO = z.infer<typeof submitSampleValidation>;

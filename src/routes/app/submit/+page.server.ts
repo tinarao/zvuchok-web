@@ -12,8 +12,6 @@ export const actions = {
 
 			const data = {
 				...values,
-				genres: (formdata.get('genres') as string).split(', '),
-				tags: (formdata.get('tags') as string).split(', '),
 				file
 			};
 

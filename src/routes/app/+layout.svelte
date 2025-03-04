@@ -1,9 +1,13 @@
 <script>
 	import { Button } from '$lib/components/ui/button';
 
-	let { children } = $props();
+	import Coins from 'lucide-svelte/icons/coins';
 
-	const navbarLinks = [{ title: 'Explore', href: '/' }];
+	let { children, data } = $props();
+	const navbarLinks = [
+		{ title: 'Explore', href: '/' },
+		{ title: 'Submit', href: '/app/submit' }
+	];
 </script>
 
 <div class="flex h-screen flex-col">
@@ -19,7 +23,17 @@
 					{/each}
 				</ul>
 			</nav>
-			<Button variant="outline" href="/app/submit">Загрузить</Button>
+			<div class="flex items-center gap-x-4">
+				<p class="bg-secondary flex items-center rounded-full">
+					<Coins class="mr-2 size-4" />
+					<span class="text-sm font-medium">
+						{data.user?.credits}
+					</span>
+				</p>
+				<p class="text-sm font-medium">
+					{data.user?.username}
+				</p>
+			</div>
 		</div>
 	</header>
 	<main class="bg-background flex-1">

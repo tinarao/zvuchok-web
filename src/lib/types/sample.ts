@@ -22,7 +22,7 @@ export type Sample = {
 	// author: User;
 	authorId: number;
 	downloads: number;
-	likes: number;
+	likesCount: number;
 	isFeatured: boolean;
 	isOnSale: boolean;
 	isFree: boolean;

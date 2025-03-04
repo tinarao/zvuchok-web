@@ -7,5 +7,7 @@ export const load: PageServerLoad = async ({ cookies }) => {
 	const token = cookies.get(ACCESS_TOKEN_NAME);
 	if (!token) redirect(302, '/login');
 
-	return { samples: sampleService.getSamplesWithSignedUrls(token) };
+	return {
+		samples: sampleService.getSamplesWithSignedUrls(token)
+	};
 };

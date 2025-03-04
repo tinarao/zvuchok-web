@@ -1,8 +1,9 @@
 <script lang="ts">
 	import Waveform from './waveform.svelte';
 	import Download from 'lucide-svelte/icons/download';
-	import { Button } from '../ui/button';
 	import Ear from 'lucide-svelte/icons/ear';
+	import { Button } from '../ui/button';
+
 	import type { SampleWithAudioSignedUrl } from '$lib/types/sample';
 
 	let { sample }: { sample: SampleWithAudioSignedUrl } = $props();
@@ -16,6 +17,11 @@
 			<Ear class="size-4" />
 			{sample.downloads}
 		</p>
+		<div class="flex items-center">
+			{#each sample.tags as tag}
+				<p class="bg-secondary rounded-full px-2 py-0.5">#{tag}</p>
+			{/each}
+		</div>
 	</div>
 	<Button size="icon" variant="ghost">
 		<Download class="size-4" />

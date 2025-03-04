@@ -1,6 +1,7 @@
 <script>
 	import SampleBlock from '$lib/components/shared/sample-block.svelte';
 	import LoaderCircle from 'lucide-svelte/icons/loader-circle';
+	import { onMount } from 'svelte';
 
 	let { data } = $props();
 </script>

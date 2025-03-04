@@ -51,12 +51,20 @@
 			<Input required accept=".mp3, .wav" type="file" name="file" />
 		</div>
 		<div>
-			<Label>Теги (до пяти, через запятую) <span class="text-red-500">*</span></Label>
-			<Input required placeholder="drums, percussion" name="tags" />
+			<Label
+				>Тег (один, после одобрения модерацией можно будет добавить больше) <span
+					class="text-red-500">*</span
+				></Label
+			>
+			<Input maxlength={32} required placeholder="drums, percussion" name="tags" />
 		</div>
 		<div>
-			<Label>Жанры (до пяти, через запятую) <span class="text-red-500">*</span></Label>
-			<Input required placeholder="uk garage, dubstep" name="genres" />
+			<Label
+				>Жанр (один, после одобрения модерацией можно будет добавить больше) <span
+					class="text-red-500">*</span
+				></Label
+			>
+			<Input maxlength={32} required placeholder="uk garage, dubstep" name="genres" />
 		</div>
 		<div class="py-2">
 			<Button type="submit">Отправить</Button>
