@@ -1,3 +1,5 @@
+import type { User } from './user';
+
 export enum AvailabilityStatus {
 	Public,
 	OnModeration,
@@ -30,3 +32,13 @@ export type Sample = {
 };
 
 export type SampleWithAudioSignedUrl = Sample & { audioSignedUrl: string };
+export type SampleWithAudioSignedUrlAndLikes = Sample & { audioSignedUrl: string; likes: Like[] };
+
+export type Like = {
+	id: number;
+	userId: number;
+	sampleId: number;
+	user: User;
+	sample: Sample;
+	createdAt: string;
+};

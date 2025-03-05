@@ -5,13 +5,13 @@
 	import Pause from 'lucide-svelte/icons/pause';
 
 	import { onMount } from 'svelte';
-	import type { SampleWithAudioSignedUrl } from '$lib/types/sample';
+	import type { SampleWithAudioSignedUrlAndLikes } from '$lib/types/sample';
 
 	let container: HTMLDivElement;
 	let wavesurfer = $state<WaveSurfer | null>(null);
 	let isPlaying = $state(false);
 
-	let { sample }: { sample: SampleWithAudioSignedUrl } = $props();
+	let { sample }: { sample: SampleWithAudioSignedUrlAndLikes } = $props();
 
 	onMount(() => {
 		wavesurfer = WaveSurfer.create({

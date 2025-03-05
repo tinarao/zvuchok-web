@@ -4,9 +4,14 @@
 	import Ear from 'lucide-svelte/icons/ear';
 	import { Button } from '../ui/button';
 
-	import type { SampleWithAudioSignedUrl } from '$lib/types/sample';
+	import type { SampleWithAudioSignedUrlAndLikes } from '$lib/types/sample';
+	import { onMount } from 'svelte';
 
-	let { sample }: { sample: SampleWithAudioSignedUrl } = $props();
+	let { sample }: { sample: SampleWithAudioSignedUrlAndLikes } = $props();
+
+	onMount(() => {
+		console.log(sample);
+	});
 </script>
 
 <article class="hover:bg-secondary/30 flex items-center justify-between rounded-md p-1 transition">
